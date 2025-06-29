@@ -8,7 +8,7 @@ A fully responsive and visually appealing **Portfolio Website** built with HTML,
 
 ## 🚀 Live Preview
 
-🔗 [View Live Website](https://Vishva1605.github.io/Web-Projects/Protfolio/)  
+🔗 [View Live Website](https://Vishva1605.github.io/Web-Projects/Portfolio/)  
 
 ---
 
