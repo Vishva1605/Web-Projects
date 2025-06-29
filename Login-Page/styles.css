@@ -1,0 +1,140 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #a2c2e8, #f6c2c2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+.login-container {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+    border: 1px solid #bbdefb;
+    position: relative;
+    top: -100px;
+    opacity: 0;
+    animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        top: -100px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: #aaa;
+}
+
+.input-group input:focus {
+    border-color: #bbdefb;
+    box-shadow: 0 0 8px rgba(187, 222, 251, 0.3);
+    outline: none;
+}
+
+.button-container {
+    position: relative;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #64b5f6;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: not-allowed;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+button:enabled {
+    cursor: pointer;
+    background-color: #1e88e5;
+}
+
+button:disabled {
+    background-color: #b3e5fc;
+    color: #fff;
+}
+
+button:hover:enabled {
+    background-color: #1565c0;
+}
+
+#tooltip {
+    display: none;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #d9534f;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+button.disabled-hover:hover ~ #tooltip {
+    display: block;
+}
+
+button::after {
+    content: '⚠️';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #d9534f;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+button.disabled-hover:hover::after {
+    opacity: 1;
+}
+
+#error-message {
+    color: #d9534f;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
